@@ -9,7 +9,10 @@ import (
 type Experience struct {
 	gorm.Model
 	Title string
-	StartDate time.Time
-	EndDate time.Time
+	Organization string
+	StartTime time.Time
+	EndTime time.Time
+	Hilight []string
 	Responsibility string
+	ReferenceContact string
 }

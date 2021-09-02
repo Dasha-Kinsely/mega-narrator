@@ -3,7 +3,7 @@ package helpers
 import (
 	"path/filepath"
 
-	"github.com/dasha-kinsely/meganarrator/serializers/errorserializers"
+	"github.com/dasha-kinsely/mega-narrator/serializers/errorserializers"
 	"github.com/gin-gonic/gin"
 )
 

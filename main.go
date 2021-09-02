@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dasha-kinsely/meganarrator/helpers"
+	"github.com/dasha-kinsely/mega-narrator/helpers"
 	"github.com/gin-gonic/gin"
 )
 

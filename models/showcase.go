@@ -2,8 +2,8 @@ package models
 
 import "gorm.io/gorm"
 
-type Album struct {
+type Showcase struct {
 	gorm.Model
 	Title string
-	Photo []*string
+	Video *string 
 }

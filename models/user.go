@@ -1,18 +1,16 @@
 package models
 
+import "gorm.io/gorm"
+
 type User struct {
+	gorm.Model
 	Email string
+	Photo *string
 	FirstName string
 	LastName string
 	TitlePhrase string
-	Address string
 	Birthdate string
 	Languages []string
-	Gender 
-	LinkedIn string
-	Facebook string
-	Twitter string
-	Github string
-	Phone string
+	Gender string
 	ResumeFile *string
 }

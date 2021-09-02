@@ -2,8 +2,8 @@ package models
 
 import "gorm.io/gorm"
 
-type Album struct {
+type Hobby struct {
 	gorm.Model
 	Title string
-	Photo []*string
+	AltDescription string
 }

@@ -8,5 +8,4 @@ type Blog struct {
 	Image *string ``
 	Text string ``
 	Link string
-	Type 
 }
