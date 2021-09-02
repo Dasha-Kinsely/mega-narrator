@@ -3,7 +3,7 @@ package helpers
 import (
 	"os"
 
-	"github.com/dasha-kinsely/mega-narrator/serializers/errorserializers"
+	"github.com/Dasha-Kinsely/mega-narrator/serializers/errorserializers"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
