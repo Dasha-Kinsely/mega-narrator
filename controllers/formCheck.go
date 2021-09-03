@@ -16,9 +16,14 @@ func FormCheck(c *gin.Context) {
 			errorserializers.ContextJSON(c, "form binding", "failed to bind form")
 			return
 		}
-		
-	/*case "education":
-	case "skill":*/
+	case "education":
+	case "skill":
+	case "experience":
+	case "showcase":
+	case "album":
+	case "blog":
+	case "hobby":
+	case "contact":
 	default:
 		errorserializers.ContextJSON(c, "form not found", "finding form")
 		return

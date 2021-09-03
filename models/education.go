@@ -8,10 +8,11 @@ import (
 
 type Education struct {
 	gorm.Model
-	Auth Auth
-	Degree string
-	InstitutePhoto *string
-	Institute string
-	StartTime time.Time
-	EndTime time.Time
+	Email string `gorm:"index"`
+	Auth Auth `gorm:"foreignKey:Email;references:Email;constraint:OnUpdate:CASCADE,OnDelete:SET NULL"`
+	Degree string `gorm:"column:title;notNull"`
+	InstitutePhoto *string `gorm:"column:institute_photo"`
+	Institute string `gorm:"column:institute;notNull"`
+	StartTime time.Time `gorm:"column:start_time"`
+	EndTime time.Time `gorm:"column:end_time"`
 }

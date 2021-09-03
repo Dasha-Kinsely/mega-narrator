@@ -5,8 +5,8 @@ import (
 )
 
 // Initialize your logging files [optional]
-/*func Init() {
-}*/
+func Init() {
+}
 
 func main() {
 	setup.Run()

@@ -6,8 +6,6 @@ import (
 	"gorm.io/gorm"
 )
 
-
-
 func NewMysqlDB(dsn string, disableDatetimePrecision bool, dontSupportRenameIndex bool, dontSupportRenameColumn bool, skipInitializeWithVersion bool) {
 	// Database connection configuration but returns nothing
 	db, dbErr := gorm.Open(mysql.New(mysql.Config{
@@ -25,5 +23,6 @@ func NewMysqlDB(dsn string, disableDatetimePrecision bool, dontSupportRenameInde
 		panic("Error initializing MYSQL_DB...")
 	}
 	models.DB = db
+	MysqlMigration()
 }
 

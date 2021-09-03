@@ -14,7 +14,7 @@ type UserValidator struct {
 		TitlePhrase string `form:"titlephrase" json:"titlephrase" binding:"required,alphanum,max=255"`
 		Citizenship string `form:"citizenship" json:"citizenship" binding:"required,alphanum,max=255"`
 		Gender string `form:"gender" json:"gender" binding:"required,alphanum,max=255"`
-		Languages []string `form:"languages" json:"languages" binding:"required"`
+		Languages string `form:"languages" json:"languages" binding:"required"`
 		Birthdate string `form:"birthdate" json:"birthdate" binding:"required,max=255"`
 		ResumeFile string `form:"resumefile" json:"resumefile" binding:"required,max=255"`
 	} `json:"check"`

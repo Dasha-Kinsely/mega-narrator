@@ -1,12 +1,7 @@
 package models
 
-import (
-	"gorm.io/gorm"
-)
-
 type Auth struct {
-	gorm.Model
-	Email string `gorm:"column:email;unique"`
+	Email string `gorm:"column:email;primaryKey;unique"`
 	PasswordHash string `gorm:"column:password_hash;notNull"`
 }
 
