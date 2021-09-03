@@ -8,6 +8,7 @@ import (
 
 type Education struct {
 	gorm.Model
+	Auth Auth
 	Degree string
 	InstitutePhoto *string
 	Institute string

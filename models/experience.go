@@ -8,6 +8,7 @@ import (
 
 type Experience struct {
 	gorm.Model
+	Auth Auth
 	Title string
 	Organization string
 	StartTime time.Time

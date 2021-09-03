@@ -1,7 +1,8 @@
-package setups
+package setup
 
 import (
 	"log"
+	"net/http"
 	"os"
 	"strconv"
 
@@ -14,7 +15,7 @@ func Run() {
 	// Init env variables
 	err := godotenv.Load()
 	if err != nil {
-		log.Println(err)
+		log.Println(err.Error())
 		errorserializers.ContextJSON(ActiveServer.Context, "load env", "initialization step")
 	}
 	// Powerup an instance of mysql for storage
@@ -33,6 +34,12 @@ func Run() {
 	redis_host := os.Getenv("REDIS_HOST")
 	redis_port := os.Getenv("REDIS_PORT")
 	redis_pass := os.Getenv("REDIS_PASS")
-	log.Println(redis_pass)
 	ActiveServer.InitializeServer(redis_host, redis_port, redis_pass)
+	port := ":" + os.Getenv("PORT")
+	ActiveServer.Serve(port)
+}
+
+// This will log errors if server shutdowns unexpectedly
+func (server *Server) Serve(addr string){
+	log.Fatal(http.ListenAndServe(addr, server.Router))
 }

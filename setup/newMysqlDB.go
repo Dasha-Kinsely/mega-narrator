@@ -1,16 +1,12 @@
-package setups
+package setup
 
 import (
+	"github.com/Dasha-Kinsely/mega-narrator/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
-// NOTE: This is your primary database and should remain consistent across any server instance
-var DB *gorm.DB
 
-func GetDB() *gorm.DB {
-	return DB
-}
 
 func NewMysqlDB(dsn string, disableDatetimePrecision bool, dontSupportRenameIndex bool, dontSupportRenameColumn bool, skipInitializeWithVersion bool) {
 	// Database connection configuration but returns nothing
@@ -28,6 +24,6 @@ func NewMysqlDB(dsn string, disableDatetimePrecision bool, dontSupportRenameInde
 		// log.Println("Error initializing MYSQL_DB...")
 		panic("Error initializing MYSQL_DB...")
 	}
-	DB = db
+	models.DB = db
 }
 

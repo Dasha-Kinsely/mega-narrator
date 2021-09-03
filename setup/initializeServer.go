@@ -1,4 +1,4 @@
-package setups
+package setup
 
 import (
 	"github.com/Dasha-Kinsely/mega-narrator/middlewares"

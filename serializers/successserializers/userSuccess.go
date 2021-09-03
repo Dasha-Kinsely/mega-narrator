@@ -1,0 +1,5 @@
+package successserializers
+
+func UserFormSuccess() {
+	
+}

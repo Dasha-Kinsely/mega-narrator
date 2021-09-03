@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/Dasha-Kinsely/mega-narrator/setups"
+	"github.com/Dasha-Kinsely/mega-narrator/setup"
 )
 
 // Initialize your logging files [optional]
-func Init() {
-}
+/*func Init() {
+}*/
 
 func main() {
-	setups.Run()
+	setup.Run()
 }

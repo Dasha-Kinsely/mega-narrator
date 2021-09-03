@@ -4,6 +4,7 @@ import "gorm.io/gorm"
 
 type Contact struct {
 	gorm.Model
+	Auth Auth
 	LinkedIn string
 	Facebook string
 	Twitter string

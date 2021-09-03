@@ -9,9 +9,15 @@ password passed via forms: "password"
 username passed via forms: "username"
 files passed via forms: "attachment"
 
-## The Following Conventions are Optional:
+## The Following Naming Conventions are Optional:
 
 directory names: [ onesingleword ] (no cap on first word, no camels, no underscore, no dashes)
 file names: [ no cap on first word ] & [ CamelOnNextWords ]
 variables: [ no cap on first word ] & [ CamelOnNextWords ]
 function and methods: [ cap on first word ] & [ CamelOnNextWords ]
+
+## The Followings are Info Regarding the Router Layout:
+
+routes associated with HELPER functions: call the helpers immediately
+routes associated with CONTROLLER functions: call the function that imports from controllers
+routes associated with MIDDLEWARES: use curly brackets to include any controllers affected by this gin.HandlerFunc
