@@ -8,9 +8,9 @@ import (
 
 type ContactValidator struct {
 	Check struct {
-
+		
 	} `json:"check"`
-	models.Contact
+	ValidatedContact models.Contact `json:"-"`
 }
 
 func NewContactValidator() ContactValidator{

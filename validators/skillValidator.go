@@ -10,7 +10,7 @@ type SkillValidator struct {
 	Check struct {
 
 	} `json:"check"`
-	models.Skill
+	ValidatedSkill models.Skill `json:"-"`
 }
 
 func NewSkillValidator() SkillValidator{

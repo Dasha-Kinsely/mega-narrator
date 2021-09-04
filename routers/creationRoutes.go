@@ -16,7 +16,7 @@ func HandleReview(c *gin.Context){
 }
 
 func CreationRoutes(r *gin.RouterGroup) {
-	r.POST("/form", HandleForm)
+	r.POST("/form/:step", HandleForm)
 	r.GET("/review", HandleReview)
 }
 

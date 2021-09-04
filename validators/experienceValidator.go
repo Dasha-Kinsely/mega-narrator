@@ -10,7 +10,7 @@ type ExperienceValidator struct {
 	Check struct {
 
 	} `json:"check"`
-	models.Experience
+	ValidatedExperience models.Experience `json:"-"`
 }
 
 func NewExperienceValidator() ExperienceValidator{

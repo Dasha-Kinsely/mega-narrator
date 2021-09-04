@@ -10,7 +10,7 @@ type HobbyValidator struct {
 	Check struct {
 
 	} `json:"check"`
-	models.Hobby
+	ValidatedHobby models.Hobby `json:"-"`
 }
 
 func NewHobbyValidator() HobbyValidator{

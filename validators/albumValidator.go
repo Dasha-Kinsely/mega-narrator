@@ -10,7 +10,7 @@ type AlbumValidator struct {
 	Check struct {
 
 	} `json:"check"`
-	models.Album
+	ValidatedAlbum models.Album `json:"-"`
 }
 
 func NewAlbumValidator() AlbumValidator{

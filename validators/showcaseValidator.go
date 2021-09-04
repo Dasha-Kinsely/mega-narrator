@@ -10,7 +10,7 @@ type ShowcaseValidator struct {
 	Check struct {
 
 	} `json:"check"`
-	models.Showcase
+	ValidatedShowcase models.Showcase `json:"-"`
 }
 
 func NewShowcaseValidator() ShowcaseValidator{

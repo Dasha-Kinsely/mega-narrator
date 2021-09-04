@@ -10,7 +10,7 @@ type BlogValidator struct {
 	Check struct {
 
 	} `json:"check"`
-	models.Blog
+	ValidatedBlog models.Blog `json:"-"`
 }
 
 func NewBlogValidator() BlogValidator{
