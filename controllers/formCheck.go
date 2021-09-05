@@ -23,12 +23,47 @@ func FormCheck(c *gin.Context) {
 			return
 		}
 	case "skill":
+		newSkill := validators.NewSkillValidator()
+		if err := newSkill.BindContext(c); err != nil {
+			errorserializers.ContextJSON(c, "form binding", "failed to bind skill form")
+			return
+		}
 	case "experience":
+		newExperience := validators.NewExperienceValidator()
+		if err := newExperience.BindContext(c); err != nil {
+			errorserializers.ContextJSON(c, "form binding", "failed to bind experience form")
+			return
+		}
 	case "showcase":
+		newShowcase := validators.NewShowcaseValidator()
+		if err := newShowcase.BindContext(c); err != nil {
+			errorserializers.ContextJSON(c, "form binding", "failed to bind showcase form")
+			return
+		}
 	case "album":
+		newAlbum := validators.NewAlbumValidator()
+		if err := newAlbum.BindContext(c); err != nil {
+			errorserializers.ContextJSON(c, "form binding", "failed to bind album form")
+			return
+		}
 	case "blog":
+		newBlog := validators.NewBlogValidator()
+		if err := newBlog.BindContext(c); err != nil {
+			errorserializers.ContextJSON(c, "form binding", "failed to bind blog form")
+			return
+		}
 	case "hobby":
+		newHobby := validators.NewHobbyValidator()
+		if err := newHobby.BindContext(c); err != nil {
+			errorserializers.ContextJSON(c, "form binding", "failed to bind hobby form")
+			return
+		}
 	case "contact":
+		newContact := validators.NewContactValidator()
+		if err := newContact.BindContext(c); err != nil {
+			errorserializers.ContextJSON(c, "form binding", "failed to bind contact form")
+			return
+		}
 	default:
 		errorserializers.ContextJSON(c, "form not found", "finding form")
 		return

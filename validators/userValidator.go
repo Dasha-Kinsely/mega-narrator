@@ -1,6 +1,8 @@
 package validators
 
 import (
+	"mime/multipart"
+
 	"github.com/Dasha-Kinsely/mega-narrator/models"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
@@ -8,7 +10,7 @@ import (
 
 type UserValidator struct {
 	Check struct {
-		Photo string `form:"photo" json:"photo" binding:"required,max=255"`
+		Photo *multipart.FileHeader `form:"photo" json:"photo" binding:"required,max=255"`
 		FirstName string `form:"firstname" json:"firstname" binding:"required,alphanum,max=255"`
 		LastName string `form:"lastname" json:"lastname" binding:"required,alphanum,max=255"`
 		TitlePhrase string `form:"titlephrase" json:"titlephrase" binding:"required,alphanum,max=255"`
@@ -31,5 +33,14 @@ func (m *UserValidator) BindContext(c *gin.Context) error {
 	if err := c.ShouldBindWith(m, binding.Default(headerMethod, headerContentType)); err != nil {
 		return err
 	}
+	m.ValidatedNewUser.FirstName = m.Check.FirstName
+	m.ValidatedNewUser.LastName = m.Check.LastName
+	m.ValidatedNewUser.Birthdate = m.Check.Birthdate
+	m.ValidatedNewUser.Citizenship = m.Check.Citizenship
+	m.ValidatedNewUser.Languages = m.Check.Languages
+	m.ValidatedNewUser.TitlePhrase = m.Check.TitlePhrase
+	m.ValidatedNewUser.Gender = m.Check.Gender
+	m.ValidatedNewUser.Photo = &m.Check.Photo.Filename
+	m.ValidatedNewUser.ResumeFile = &m.Check.ResumeFile
 	return nil
 }
